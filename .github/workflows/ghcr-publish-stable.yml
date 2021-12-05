@@ -194,7 +194,6 @@ jobs:
         run: |
           cd projector-docker
           ./build-container.sh ${{ secrets.DOCKER_IMAGE_OWNER }}/${{ matrix.imageName}}:${{ matrix.tag }}-projector-${{ env.PROJECTOR_STABLE }} ${{ matrix.downloadLink }}
-          docker push ${{ secrets.DOCKER_IMAGE_OWNER }}/${{ matrix.ImageName }}:${{ matrix.tag }}-projector-${{ env.PROJECTOR_STABLE }}
 
       - name: Push latest
         if: ${{ matrix.isLatest }}
